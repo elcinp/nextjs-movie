@@ -3,9 +3,9 @@ import Link from 'next/link';
 export default function MovieCard({movies}) {
 	return <div className="popular">
 		<h2>Popular Films</h2>
-		<div className="popular-inner">
-			{movies.results.map(movie => (
-				<Link href={`/film/${movie.id}`}>
+		<div className="popular-inner" >
+			{movies.results.map((movie,index) => (
+				<Link href={`/film/${movie.id}`} key={index}>
 					<a>
 						<h3>{movie.title}</h3>
 						<img src={`https://www.themoviedb.org/t/p/w220_and_h330_face${movie.poster_path}`} alt=""/>

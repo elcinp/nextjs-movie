@@ -1,14 +1,14 @@
 import Head from 'next/head';
 
 export default function FilmDetail({movie}) {
-	console.log(movie)
+	// console.log(movie)
 	return (
-		<div className="movie">
+		<div className="movie" key={movie.id}>
 			<Head>
 				<title>{movie.title}</title>
 			</Head>
 			<div className="cover"
-			     style={{backgroundImage: `url(https://www.themoviedb.org/t/p/original${movie.backdrop_path})`}}></div>
+			     style={{backgroundImage: `url(https://www.themoviedb.org/t/p/original${movie.backdrop_path})`}} key={movie.id}></div>
 			<h3>{movie.title}</h3>
 			<div className="summary">
 				{movie.overview}
